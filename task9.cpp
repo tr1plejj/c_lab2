@@ -10,12 +10,6 @@
 
 namespace lab2 {
 
-namespace {
-
-constexpr int kMaxVectorCount = 100;
-
-}  // namespace
-
 int CountContainingAll(const std::vector<int>& v0,
                        const std::vector<std::vector<int>>& vectors) {
   std::set<int> required(v0.begin(), v0.end());
@@ -33,7 +27,7 @@ int CountContainingAll(const std::vector<int>& v0,
 
 void RunTask9() {
   std::vector<int> v0 = ReadInts("Введите элементы V0: ", 1, 1);
-  int n = ReadInt("Введите N (от 1 до 100): ", 1, kMaxVectorCount);
+  int n = ReadInt("Введите N (больше 0): ", 1, kMaxInt);
   std::vector<std::vector<int>> vectors;
   for (int i = 1; i <= n; ++i) {
     vectors.push_back(ReadInts("Введите элементы V" + std::to_string(i) +

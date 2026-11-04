@@ -2,12 +2,14 @@
 
 #include <cctype>
 #include <charconv>
+#include <cstddef>
 #include <cstdlib>
 #include <iostream>
 #include <iterator>
 #include <optional>
 #include <sstream>
 #include <string>
+#include <system_error>
 #include <vector>
 
 namespace lab2 {
@@ -83,7 +85,7 @@ std::vector<int> ReadInts(const std::string& prompt, size_t min_count,
 
     if (!bad_token.empty()) {
       std::cout << "Ошибка: \"" << bad_token
-                << "\" не является целым числом (int).\n";
+                << "\" не является целым числом или не помещается в int.\n";
     } else if (numbers.size() < min_count) {
       std::cout << "Ошибка: нужно не меньше " << min_count << " чисел.\n";
     } else if (numbers.size() % multiple != 0) {

@@ -38,7 +38,7 @@ constexpr int kMenuSize = static_cast<int>(std::size(kMenu));
 
 int main() {
   while (true) {
-    std::cout << "\n=== Лабораторная работа №2 (STL), вариант 1 ===\n";
+    std::cout << "\nЛабораторная работа №2\n";
     for (int i = 0; i < kMenuSize; ++i) {
       std::cout << (i + 1) << ". " << kMenu[i].title << '\n';
     }
